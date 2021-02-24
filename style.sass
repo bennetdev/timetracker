@@ -1,0 +1,259 @@
+$light: #ffffff
+$blue_main: #7C81F6
+$blue_sec: #2D445B
+$green: #4EE2B9
+$header_font_size: 36px
+$text_font_size: 24px
+$red_main: #ee2e31
+$grey: rgba(105, 105, 105, 0.54)
+
+
+body
+  font-family: "Roboto", sans-serif
+
+.center
+  display: flex
+  justify-content: center
+
+.projects
+  display: flex
+  flex-wrap: wrap
+  padding: 110px 150px 110px 150px
+
+.add_project
+  height: 351px
+  width: 351px
+  background-color: $light
+  border-radius: 12px
+  border: 4px dashed $blue_main
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  transition: box-shadow 0.2s ease
+  &:hover
+    box-shadow: 0 4px 10px grey
+  .add
+    font-size: 120px
+    font-weight: 400
+    color: $blue_sec
+
+.project
+  height: 355px
+  width: 355px
+  background-color: $light
+  border-radius: 12px
+  box-shadow: 0 4px 10px grey
+  margin: 0 30px 30px 0
+  .content
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 275px
+    &:hover
+      .edit_money
+        display: block
+    .edit_money
+      display: none
+      cursor: pointer
+      margin-left: 8px
+    .money
+      color: $green
+      position: absolute
+      padding: 0
+      margin: 0
+      font-weight: bold
+      font-size: $text_font_size
+    .total
+      top: 8px
+      left: 16px
+      border: none
+      outline: none
+      font-family: "Roboto", sans-serif
+  .per_hour
+    top: 8px
+    right: 16px
+  .header
+    display: flex
+    align-items: center
+    height: 80px
+    width: 100%
+    background-color: #7C81F6
+    border-radius: 12px 12px 0 0
+    color: $light
+    &:hover
+      .edit_title
+        display: block
+    .edit_title
+      margin-left: 16px
+      cursor: pointer
+      display: none
+    .live
+      height: 16px
+      width: 16px
+      margin-left: 12px
+      background-color: $red_main
+      border-radius: 50%
+      box-shadow: 0 0 0 $red_main
+      animation: live_pulse 2s infinite ease
+    .not_live
+      display: none
+    .title
+      margin-left: 20px
+      font-size: $header_font_size
+      max-width: 200px
+      outline: none
+      border: none
+      color: $light
+      font-weight: 700
+      background: transparent
+      font-family: "Roboto", sans-serif
+    .play, .pause
+      font-size: 51px
+      margin-left: auto
+      margin-right: 20px
+      cursor: pointer
+      transition: color 0.3s ease
+      &:hover
+        color: $blue_sec
+.watch
+  height: auto
+  width: auto
+  color: $blue_sec
+  position: relative
+  min-height: 100px
+  display: flex
+  align-items: center
+  .change_time
+    position: absolute
+    text-shadow: 0 1px 3px grey
+    cursor: pointer
+    transition: color 0.2s ease
+    &:hover
+      color: $blue_main
+    &.up
+      top: 0
+    &.down
+      bottom: 0
+    &.hours
+      left: 21px
+    &.minutes
+      right: 24px
+  .time
+    letter-spacing: 8px
+.login_page
+  background-color: $blue_sec
+  height: 100vh
+  overflow: hidden
+  width: 100%
+  margin: 0
+  .center
+    height: 100%
+    align-items: center
+  .login
+    width: 1200px
+    height: 700px
+    background-color: $light
+    border-radius: 20px
+    display: flex
+    text-align: center
+    overflow: hidden
+    .switch_login
+      background-color: $blue_main
+      width: 410px
+      color: $light
+      border-radius: 20px 0 0 20px
+      padding: 168px 0 0 0
+      position: relative
+      transition: width 1s ease
+      z-index: 1
+      order: 0
+      .watch
+        margin-top: 36px
+        width: 187px
+        margin-left: auto
+        margin-right: auto
+        color: $light
+        .change_time
+          &:hover
+            color: $blue_sec
+      #switch_sign_up
+        color: $light
+        border-radius: 50px
+        height: 45px
+        width: 150px
+        background-color: transparent
+        border: 1px solid $light
+        font-size: $text_font_size
+        position: absolute
+        bottom: 168px
+        left: calc(50% - 75px)
+        cursor: pointer
+        transition: color, background-color 0.5s ease
+        &:hover
+          color: $blue_main
+          background-color: $light
+    .credentials, .credentials_register
+      color: $blue_sec
+      width: 790px
+      padding: 72px 0 72px 0
+      position: relative
+      transition: width 1s ease
+      z-index: 0
+      h1
+        white-space: nowrap
+      .cred_form
+        position: absolute
+        left: calc(50% - 152px)
+        top: calc(50% - 80px)
+        .toggle_visible
+          position: absolute
+          right: 6px
+          color: $blue_sec
+          cursor: pointer
+        input
+          outline: none
+          border: none
+          border-bottom: 1px solid $grey
+          margin-bottom: 80px
+          width: 300px
+          color: $blue_sec
+          padding-bottom: 10px
+          font-size: 16px
+          &::placeholder
+            font-size: 16px
+            color: $grey
+            font-family: "Roboto", sans-serif
+      .submit_form
+        color: $light
+        height: 45px
+        width: 300px
+        background-color: $blue_main
+        border: none
+        border-radius: 50px
+        font-size: $text_font_size
+        position: absolute
+        bottom: 72px
+        left: calc(50% - 150px)
+        box-shadow: 0 4px 7px grey
+        cursor: pointer
+        transition: box-shadow 0.5s ease
+        &:hover
+          box-shadow: 0 7px 9px grey
+    .credentials_register
+      visibility: hidden
+      width: 0
+
+button
+  outline: none
+  font-family: "Roboto", sans-serif
+
+// animations
+@keyframes live_pulse
+  0%
+    box-shadow: 0 0 2px $red_main
+  50%
+    box-shadow: 0 0 13px $red_main
+  100%
+    box-shadow: 0 0 2px $red_main
